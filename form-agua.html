@@ -24,6 +24,13 @@ button { padding:10px; cursor:pointer; }
 <textarea name="obs"></textarea>
 
 <button onclick="guardar()">💾 Guardar datos</button>
+<label>Adjuntar archivo (planos, fotos, PDF):</label>
+<input type="file" id="fileInput">
+
+<button onclick="guardarArchivo()">📎 Guardar archivo</button>
+
+<ul id="fileList"></ul>
+
 <button onclick="location.href='menu.html'">⬅️ Volver</button>
 
 <script>
@@ -46,6 +53,57 @@ function marcarCompleto(modulo) {
     e[modulo] = "completo";
     localStorage.setItem("estado_" + sessionStorage.getItem('usuario'), JSON.stringify(e));
 }
+
+// ✅ guardar archivo en localStorage en base64
+function guardarArchivo() {
+    const usuario = sessionStorage.getItem('usuario');
+    const modulo = window.location.pathname.split('/').pop().replace('.html','');
+    const input = document.getElementById('fileInput').files[0];
+
+    if (!input) return alert("Seleccione un archivo");
+
+    const reader = new FileReader();
+    reader.onload = function() {
+        let archivos = JSON.parse(localStorage.getItem(usuario + "_" + modulo + "_files")) || [];
+        archivos.push({ nombre: input.name, datos: reader.result });
+        localStorage.setItem(usuario + "_" + modulo + "_files", JSON.stringify(archivos));
+        alert("✅ Archivo guardado");
+        mostrarArchivos();
+    };
+    reader.readAsDataURL(input);
+}
+
+// ✅ mostrar archivos
+function mostrarArchivos() {
+    const usuario = sessionStorage.getItem('usuario');
+    const modulo = window.location.pathname.split('/').pop().replace('.html','');
+    const archivos = JSON.parse(localStorage.getItem(usuario + "_" + modulo + "_files")) || [];
+    const lista = document.getElementById("fileList");
+
+    lista.innerHTML = "";
+    archivos.forEach((f, i) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${f.nombre} 
+            <button onclick="descargarArchivo(${i})">⬇️</button>`;
+        lista.appendChild(li);
+    });
+}
+
+// ✅ descargar archivo
+function descargarArchivo(i) {
+    const usuario = sessionStorage.getItem('usuario');
+    const modulo = window.location.pathname.split('/').pop().replace('.html','');
+    const archivos = JSON.parse(localStorage.getItem(usuario + "_" + modulo + "_files"));
+    const f = archivos[i];
+
+    const a = document.createElement("a");
+    a.href = f.datos;
+    a.download = f.nombre;
+    a.click();
+}
+
+mostrarArchivos();
+
 </script>
 
 </body>
