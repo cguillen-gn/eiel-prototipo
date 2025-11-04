@@ -11,29 +11,35 @@ input, button { width: 100%; max-width: 300px; padding: 8px; margin: 6px 0; }
 <body>
 
 <h2>Acceso Municipios EIEL</h2>
+<p>Introduzca las credenciales asignadas por Diputación</p>
 
-<input id="user" placeholder="Usuario">
-<input id="pass" type="password" placeholder="Contraseña">
-<button onclick="login()">Entrar</button>
+<input id="username" placeholder="Usuario">
+<input id="password" type="password" placeholder="Contraseña">
+<button id="loginBtn">Entrar</button>
+
+<p id="mensaje" style="color:red;"></p>
 
 <script>
-const usuarios = {
-  "aspe": "1234",
-  "elda": "abcd",
-  "alcoy": "2025"
-};
+<script>
+document.getElementById("loginBtn").addEventListener("click", function() {
+  const u = document.getElementById("username").value.toLowerCase().trim();
+  const p = document.getElementById("password").value.trim();
 
-function login() {
-  let u = document.getElementById("user").value.toLowerCase().trim();
-  let p = document.getElementById("pass").value.trim();
+  const usuarios = {
+    "aspe": "1234",
+    "elda": "abcd",
+    "alcoy": "2025"
+  };
 
   if (usuarios[u] && usuarios[u] === p) {
-    localStorage.setItem("municipio", u);
+    localStorage.setItem("usuarioActual", u);
     window.location.href = "index.html";
   } else {
-    alert("Usuario o contraseña incorrectos");
+    document.getElementById("mensaje").textContent = "Usuario o contraseña incorrectos";
   }
-}
+});
+</script>
+
 </script>
 
 </body>
