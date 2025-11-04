@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Acceso EIEL</title>
+<title>Portal EIEL</title>
 <style>
-body { font-family: Arial; padding: 40px; max-width:400px; margin:auto; }
-input { width:100%; padding:8px; margin:8px 0; }
-button { padding:10px; width:100%; cursor:pointer; }
+body { font-family: Arial; margin: 20px; }
+a { display: block; margin: 10px 0; font-size: 18px; }
 </style>
 </head>
 <body>
 
-<h2>Acceso a Plataforma EIEL</h2>
+<h2>Portal EIEL - Ayuntamiento</h2>
 
-<input id="user" placeholder="Usuario">
-<input id="pass" type="password" placeholder="Contraseña">
-<button onclick="login()">Entrar</button>
+<p>Municipio: <b id="municipio"></b></p>
+
+<h3>Seleccione el formulario</h3>
+<a href="form-agua.html">💧 Infraestructura de Agua</a>
+
+<button onclick="logout()">Cerrar sesión</button>
 
 <script>
-const credenciales = {
-  "ayto_001": "clave001",
-  "ayto_002": "clave002"
-};
+// Si no hay login, volver al login
+if (!localStorage.getItem("municipio")) {
+  window.location.href = "login.html";
+}
 
-function login() {
-  const u = document.getElementById("user").value;
-  const p = document.getElementById("pass").value;
+document.getElementById("municipio").textContent = localStorage.getItem("municipio");
 
-  if (credenciales[u] === p) {
-    sessionStorage.setItem("usuario", u);
-    window.location = "menu.html";
-  } else {
-    alert("Usuario o contraseña incorrectos");
-  }
+function logout() {
+  localStorage.clear();
+  window.location.href = "login.html";
 }
 </script>
 
