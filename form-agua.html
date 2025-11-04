@@ -9,12 +9,15 @@ input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; max-w
 ul { list-style: none; padding: 0; }
 li { margin: 5px 0; }
 .borrar { color: red; cursor: pointer; margin-left: 10px; font-weight: bold; }
+.deposito { margin-bottom: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px; }
 </style>
 </head>
 <body>
 
 <h2>Formulario Agua</h2>
 <p>Municipio: <span id="municipio"></span></p>
+
+<div id="depositos"></div>
 
 <input type="file" id="archivoInput" multiple>
 <ul id="archivosAdjuntos"></ul>
@@ -24,31 +27,42 @@ li { margin: 5px 0; }
 
 <p id="mensaje" style="color:green;"></p>
 
-<!-- Librería jsPDF -->
+<!-- jsPDF para generar PDF de resguardo -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
-// Sesión
+// === Sesión del usuario ===
 const usuario = localStorage.getItem("usuarioActual");
-if (!usuario) {
-  window.location.href = "login.html";
-} else {
-  document.getElementById("municipio").textContent = usuario;
-}
+if (!usuario) window.location.href = "login.html";
+document.getElementById("municipio").textContent = usuario;
 
-// Array temporal para archivos
+// === Datos simulados de PostgreSQL ===
+const depositosData = [
+  { nombre: "Depósito Central", ultima_limpieza: "2023-06-15" },
+  { nombre: "Depósito Norte", ultima_limpieza: "2022-11-20" },
+  { nombre: "Depósito Sur", ultima_limpieza: "" }
+];
+
+// === Generar formulario dinámico ===
+const contenedor = document.getElementById("depositos");
+depositosData.forEach((d, i) => {
+  const div = document.createElement("div");
+  div.className = "deposito";
+  div.innerHTML = `
+    <label>${d.nombre}</label>
+    <input type="date" id="fecha_${i}" value="${d.ultima_limpieza}">
+  `;
+  contenedor.appendChild(div);
+});
+
+// === Manejo de archivos adjuntos ===
 let archivos = [];
-
-// Adjuntar archivos automáticamente al seleccionar
 document.getElementById("archivoInput").addEventListener("change", function(e) {
-  for (const file of e.target.files) {
-    archivos.push(file);
-  }
+  for (const file of e.target.files) archivos.push(file);
   mostrarArchivos();
   e.target.value = "";
 });
 
-// Mostrar lista de archivos con botón de borrar
 function mostrarArchivos() {
   const lista = document.getElementById("archivosAdjuntos");
   lista.innerHTML = "";
@@ -58,70 +72,50 @@ function mostrarArchivos() {
     const btn = document.createElement("span");
     btn.textContent = "✖";
     btn.className = "borrar";
-    btn.onclick = () => {
-      archivos.splice(i, 1);
-      mostrarArchivos();
-    };
+    btn.onclick = () => { archivos.splice(i, 1); mostrarArchivos(); };
     li.appendChild(btn);
     lista.appendChild(li);
   });
 }
 
-// Firmar y enviar
-document.getElementById("firmarBtn").addEventListener("click", async function() {
-  if (archivos.length === 0) {
-    alert("No hay archivos adjuntos");
-    return;
-  }
+// === Firmar y enviar (simulado) ===
+document.getElementById("firmarBtn").addEventListener("click", function() {
+  // Recoger fechas del formulario
+  const fechas = depositosData.map((d,i) => ({
+    nombre: d.nombre,
+    ultima_limpieza: document.getElementById(`fecha_${i}`).value
+  }));
 
-  const formData = new FormData();
-  formData.append("usuario", usuario);
-  archivos.forEach((f,i) => formData.append(`archivo${i}`, f));
-
-  try {
-    const res = await fetch("https://formspree.io/f/xkgplykp", { // <--- reemplaza XXXX por tu endpoint
-      method: "POST",
-      body: formData
-    });
-
-    if (!res.ok) throw new Error("Error en el envío");
-
-    document.getElementById("mensaje").textContent = "Formulario firmado y enviado correctamente";
-
-    // Generar resguardo PDF
-    generarResguardoPDF();
-
-    // Limpiar archivos
-    archivos = [];
-    mostrarArchivos();
-  } catch (err) {
-    console.error(err);
-    alert("No se pudo enviar el formulario");
-  }
-});
-
-// Generar resguardo en PDF
-function generarResguardoPDF() {
+  // Generar PDF de resguardo
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  const fecha = new Date().toLocaleString();
+  const fechaEnvio = new Date().toLocaleString();
 
   doc.setFontSize(16);
   doc.text("Resguardo Formulario EIEL", 10, 10);
   doc.setFontSize(12);
-  doc.text(`Fecha: ${fecha}`, 10, 20);
+  doc.text(`Fecha: ${fechaEnvio}`, 10, 20);
   doc.text(`Municipio: ${usuario}`, 10, 30);
 
   let y = 40;
-  doc.text("Archivos adjuntos:", 10, y);
+  doc.text("Depósitos y última limpieza:", 10, y);
   y += 10;
-  archivos.forEach(f => {
-    doc.text(f.name, 15, y);
+  fechas.forEach(f => {
+    doc.text(`${f.nombre}: ${f.ultima_limpieza || "No registrada"}`, 15, y);
     y += 10;
   });
 
+  if (archivos.length > 0) {
+    doc.text("Archivos adjuntos:", 10, y);
+    y += 10;
+    archivos.forEach(f => { doc.text(f.name, 15, y); y += 10; });
+  }
+
   doc.save(`resguardo_${usuario}_${Date.now()}.pdf`);
-}
+  document.getElementById("mensaje").textContent = "Formulario firmado y resguardo PDF generado";
+  archivos = [];
+  mostrarArchivos();
+});
 
 function cerrarSesion() {
   localStorage.removeItem("usuarioActual");
