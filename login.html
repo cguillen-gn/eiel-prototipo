@@ -9,8 +9,6 @@ input, button { width: 100%; max-width: 300px; padding: 8px; margin: 6px 0; }
 </style>
 </head>
 <body>
-<p style="color:red;font-weight:bold">VERSION DEBUG 1</p>
-
 
 <h2>Acceso Municipios EIEL</h2>
 <p>Introduzca las credenciales asignadas por Diputación</p>
@@ -19,35 +17,33 @@ input, button { width: 100%; max-width: 300px; padding: 8px; margin: 6px 0; }
 <input id="password" type="password" placeholder="Contraseña">
 <button onclick="login()">Entrar</button>
 
-<button onclick="
-if (document.getElementById('username').value==='aspe' 
- && document.getElementById('password').value==='1234') {
-   alert('TEST OK');
-} else {
-   alert('TEST MAL');
-}
-">TEST</button>
-
+<p id="mensaje" style="color:red;"></p>
 
 <script>
-const usuarios = {
-  "aspe": "1234",
-  "elda": "abcd",
-  "alcoy": "2025"
-};
+console.log("Script cargado correctamente");
 
 function login() {
-  let u = document.getElementById("username").value.toLowerCase().trim();
-  let p = document.getElementById("password").value.trim();
+  console.log("Ejecutando login()");
+  const usuarios = {
+    "aspe": "1234",
+    "elda": "abcd",
+    "alcoy": "2025"
+  };
+
+  const u = document.getElementById("username").value.toLowerCase().trim();
+  const p = document.getElementById("password").value.trim();
+
+  console.log("Usuario:", u, "Contraseña:", p);
 
   if (usuarios[u] && usuarios[u] === p) {
     localStorage.setItem("municipio", u);
+    console.log("Login correcto, redirigiendo...");
     window.location.href = "index.html";
   } else {
-    alert("Usuario o contraseña incorrectos");
+    console.log("Credenciales incorrectas");
+    document.getElementById("mensaje").textContent = "Usuario o contraseña incorrectos";
   }
 }
-
 </script>
 
 </body>
