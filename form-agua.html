@@ -2,110 +2,50 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Formulario Agua - EIEL</title>
+<title>Formulario Agua</title>
 <style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-input, button, select { margin: 8px 0; padding: 6px; width: 100%; max-width: 400px; }
-h2, h3 { margin-top: 20px; }
-ul { padding-left: 18px; }
-button { cursor: pointer; }
+body { font-family: Arial; margin: 20px; }
+input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; max-width: 400px; }
 </style>
 </head>
 <body>
 
-<h2>Formulario EIEL - Agua</h2>
+<h2>Formulario Agua</h2>
 
-<p><b>Municipio:</b> <span id="municipio"></span></p>
+<p>Municipio: <span id="municipio"></span></p>
 
-<label>Población abastecida</label>
-<input type="number" id="poblacion" placeholder="Ej: 1200">
+<input type="text" id="campo1" placeholder="Ejemplo de campo">
+<input type="file" id="archivo1">
+<button id="guardarBtn">Guardar</button>
+<button onclick="cerrarSesion()">Cerrar sesión</button>
 
-<label>Longitud de red (km)</label>
-<input type="number" id="longitud" placeholder="Ej: 42.5">
-
-<label>Depósitos principales (m³)</label>
-<input type="number" id="depositos" placeholder="Ej: 2500">
-
-<h3>Adjuntar archivos</h3>
-
-<input type="file" id="fileInput" multiple>
-<button type="button" onclick="guardarArchivo()">📎 Guardar archivo(s)</button>
-
-<ul id="fileList"></ul>
-
-<br>
-<button onclick="guardarDatos()">💾 Guardar datos</button>
-<button onclick="finalizar()">✅ Finalizar y firmar</button>
+<p id="mensaje" style="color:green;"></p>
 
 <script>
-// Verificación de login
-if (!localStorage.getItem('municipio')) {
+// Comprobar sesión
+const usuario = localStorage.getItem("usuarioActual");
+if (!usuario) {
   window.location.href = "login.html";
+} else {
+  document.getElementById("municipio").textContent = usuario;
 }
 
-// Mostrar nombre del municipio
-document.getElementById("municipio").textContent = localStorage.getItem('municipio');
+// Guardar datos y archivos (demo)
+document.getElementById("guardarBtn").addEventListener("click", function() {
+  const campo1 = document.getElementById("campo1").value.trim();
+  const archivo1 = document.getElementById("archivo1").files[0];
 
-// Cargar datos almacenados si existen
-window.onload = function() {
-  document.getElementById("poblacion").value = localStorage.getItem("agua_poblacion") || "";
-  document.getElementById("longitud").value = localStorage.getItem("agua_longitud") || "";
-  document.getElementById("depositos").value = localStorage.getItem("agua_depositos") || "";
+  // Aquí podrías guardar en localStorage o enviar al backend
+  console.log("Datos guardados:", { campo1, archivo1 });
 
-  let stored = JSON.parse(localStorage.getItem('adjuntos_agua') || "[]");
-  let list = document.getElementById('fileList');
-  list.innerHTML = "";
-  stored.forEach(name => {
-    let li = document.createElement('li');
-    li.textContent = name;
-    list.appendChild(li);
-  });
-};
+  document.getElementById("mensaje").textContent = "Datos guardados correctamente (ver consola)";
+});
 
-// Guardar campos
-function guardarDatos() {
-  localStorage.setItem("agua_poblacion", document.getElementById("poblacion").value);
-  localStorage.setItem("agua_longitud", document.getElementById("longitud").value);
-  localStorage.setItem("agua_depositos", document.getElementById("depositos").value);
-
-  alert("✅ Datos guardados localmente.");
-}
-
-// Guardar archivos (solo nombre)
-function guardarArchivo() {
-  const input = document.getElementById('fileInput');
-  const files = input.files;
-
-  if (!files.length) {
-    alert("⚠️ No seleccionaste archivos");
-    return;
-  }
-
-  let stored = JSON.parse(localStorage.getItem('adjuntos_agua') || "[]");
-
-  for (let file of files) {
-    stored.push(file.name);
-  }
-
-  localStorage.setItem('adjuntos_agua', JSON.stringify(stored));
-
-  let list = document.getElementById('fileList');
-  list.innerHTML = "";
-  stored.forEach(name => {
-    let li = document.createElement('li');
-    li.textContent = name;
-    list.appendChild(li);
-  });
-
-  alert("📎 Archivos registrados localmente");
-}
-
-// Finalizar (simulado)
-function finalizar() {
-  alert("✅ Formulario finalizado.\n\n*En la versión final, aquí se enviarán los datos y se firmará electrónicamente.*");
+function cerrarSesion() {
+  localStorage.removeItem("usuarioActual");
+  window.location.href = "login.html";
 }
 </script>
 
 </body>
 </html>
-
