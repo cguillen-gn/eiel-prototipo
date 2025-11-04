@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
+<title>Menú EIEL</title>
 <meta charset="UTF-8">
-<title>Panel Municipal - EIEL</title>
-<link rel="stylesheet" href="style.css">
+<style>
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    background: #f8f8f8;
+}
+.card:hover {
+    background: #e6e6e6;
+}
+</style>
 </head>
 <body>
 
-<header>
-  EIEL - Diputación de Alicante &nbsp;|&nbsp; Panel Municipal
-</header>
+<h2>Bienvenido, <span id="usuario"></span></h2>
+<p>Seleccione el área que desea actualizar:</p>
 
-<div class="container">
-  <p><b>Ayuntamiento:</b> <span id="user"></span></p>
-
-  <div class="card">
-    <h3>Infraestructuras</h3>
-    <a class="btn" href="form-agua.html">Agua</a>
-    <a class="btn" href="form-alcantarillado.html">Alcantarillado</a>
-    <a class="btn" href="form-residuos.html">Residuos</a>
-    <a class="btn" href="resumen.html">Resumen / Enviar</a>
-  </div>
-
-  <div class="card">
-    <button onclick="cerrar()">Cerrar sesión</button>
-  </div>
-</div>
+<div class="card" onclick="go('form-agua.html')">💧 Infraestructura de Agua</div>
+<div class="card" onclick="go('form-saneamiento.html')">🚰 Saneamiento</div>
+<div class="card" onclick="go('form-residuos.html')">♻️ Residuos</div>
+<div class="card" onclick="go('form-vias.html')">🛣️ Vías Públicas</div>
 
 <script>
-if (!sessionStorage.getItem("usuario")) {
-  window.location.href = "index.html";
+if (!sessionStorage.getItem('usuario')) {
+    window.location = "index.html";
 }
+document.getElementById('usuario').innerText = sessionStorage.getItem('usuario');
 
-document.getElementById("user").innerText = sessionStorage.getItem("usuario");
-
-function cerrar(){
-  sessionStorage.clear();
-  window.location.href = "index.html";
+function go(pag) {
+    window.location = pag;
 }
 </script>
 
 </body>
 </html>
+
