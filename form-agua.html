@@ -4,123 +4,159 @@
 <meta charset="UTF-8">
 <title>Formulario Agua</title>
 <style>
-body { font-family: Arial; margin: 20px; }
-input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; max-width: 400px; }
-ul { list-style: none; padding: 0; }
-li { margin: 5px 0; }
-.borrar { color: red; cursor: pointer; margin-left: 10px; font-weight: bold; }
-.deposito { margin-bottom: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 5px; }
+body { font-family: Arial; padding: 20px; background: #f2f2f2; }
+.container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+input, button { width: 100%; padding: 8px; margin: 5px 0; }
+button { cursor: pointer; }
+.file-list { margin: 10px 0; }
+.file-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+.file-item span { flex: 1; }
+.file-item button { background: red; color: white; border: none; padding: 2px 6px; border-radius: 4px; cursor: pointer; }
+#mensaje { margin-top: 10px; font-weight: bold; }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 
-<h2>Formulario Agua</h2>
-<p>Municipio: <span id="municipio"></span></p>
+<div class="container">
+  <h2>Formulario Agua</h2>
+  <p>Municipio: <span id="usuario"></span></p>
 
-<div id="depositos"></div>
+  <div id="depositos"></div>
 
-<input type="file" id="archivoInput" multiple>
-<ul id="archivosAdjuntos"></ul>
+  <input type="file" id="adjuntar" multiple>
+  <div class="file-list" id="fileList"></div>
 
-<button id="firmarBtn">Firmar y enviar</button>
-<button onclick="cerrarSesion()">Cerrar sesión</button>
-
-<p id="mensaje" style="color:green;"></p>
-
-<!-- jsPDF para generar PDF de resguardo -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <button id="firmarBtn">Firmar y enviar</button>
+  <div id="mensaje"></div>
+</div>
 
 <script>
-// === Sesión del usuario ===
+// Evitar acceso sin login
 const usuario = localStorage.getItem("usuarioActual");
-if (!usuario) window.location.href = "login.html";
-document.getElementById("municipio").textContent = usuario;
+if(!usuario) window.location.href = "login.html";
+document.getElementById("usuario").textContent = usuario;
 
-// === Datos simulados de PostgreSQL ===
+// JSON de ejemplo de depósitos
 const depositosData = [
-  { nombre: "Depósito Central", ultima_limpieza: "2023-06-15" },
-  { nombre: "Depósito Norte", ultima_limpieza: "2022-11-20" },
-  { nombre: "Depósito Sur", ultima_limpieza: "" }
+  {nombre: "Depósito Central"},
+  {nombre: "Depósito Norte"},
+  {nombre: "Depósito Sur"}
 ];
 
-// === Generar formulario dinámico ===
-const contenedor = document.getElementById("depositos");
-depositosData.forEach((d, i) => {
+// Generar formulario dinámicamente
+const depositosDiv = document.getElementById("depositos");
+depositosData.forEach((dep,i)=>{
   const div = document.createElement("div");
-  div.className = "deposito";
   div.innerHTML = `
-    <label>${d.nombre}</label>
-    <input type="date" id="fecha_${i}" value="${d.ultima_limpieza}">
+    <label>${dep.nombre} - Última limpieza:</label>
+    <input type="date" id="fecha_${i}">
   `;
-  contenedor.appendChild(div);
+  depositosDiv.appendChild(div);
 });
 
-// === Manejo de archivos adjuntos ===
+// Archivos adjuntos
 let archivos = [];
-document.getElementById("archivoInput").addEventListener("change", function(e) {
-  for (const file of e.target.files) archivos.push(file);
+const adjuntarInput = document.getElementById("adjuntar");
+const fileListDiv = document.getElementById("fileList");
+
+adjuntarInput.addEventListener("change", (e)=>{
+  for(const f of e.target.files){
+    archivos.push(f);
+  }
   mostrarArchivos();
-  e.target.value = "";
 });
 
-function mostrarArchivos() {
-  const lista = document.getElementById("archivosAdjuntos");
-  lista.innerHTML = "";
-  archivos.forEach((f, i) => {
-    const li = document.createElement("li");
-    li.textContent = f.name;
-    const btn = document.createElement("span");
-    btn.textContent = "✖";
-    btn.className = "borrar";
-    btn.onclick = () => { archivos.splice(i, 1); mostrarArchivos(); };
-    li.appendChild(btn);
-    lista.appendChild(li);
+function mostrarArchivos(){
+  fileListDiv.innerHTML = "";
+  archivos.forEach((f,i)=>{
+    const div = document.createElement("div");
+    div.className = "file-item";
+    div.innerHTML = `<span>${f.name}</span><button onclick="quitarArchivo(${i})">X</button>`;
+    fileListDiv.appendChild(div);
   });
 }
 
-// === Firmar y enviar (simulado) ===
-document.getElementById("firmarBtn").addEventListener("click", function() {
-  // Recoger fechas del formulario
-  const fechas = depositosData.map((d,i) => ({
-    nombre: d.nombre,
-    ultima_limpieza: document.getElementById(`fecha_${i}`).value
-  }));
+function quitarArchivo(index){
+  archivos.splice(index,1);
+  mostrarArchivos();
+}
 
-  // Generar PDF de resguardo
+// Configuración Google Drive Web App
+const URL_DRIVE = "TU_WEB_APP_URL"; // reemplazar con la URL de tu Apps Script
+
+// Configuración Google Forms (solo nombres y fechas)
+const URL_FORM = "TU_FORM_URL";
+const FORM_ENTRIES = {
+  municipio: "entry.1111111111", // cambiar a entry correcto
+  depositos: depositosData.map((d,i)=>`entry.22222222${i}`),
+  archivos: "entry.3333333333"
+};
+
+// Función generar PDF
+function generarPDF(){
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
   const fechaEnvio = new Date().toLocaleString();
-
   doc.setFontSize(16);
   doc.text("Resguardo Formulario EIEL", 10, 10);
   doc.setFontSize(12);
   doc.text(`Fecha: ${fechaEnvio}`, 10, 20);
   doc.text(`Municipio: ${usuario}`, 10, 30);
-
-  let y = 40;
-  doc.text("Depósitos y última limpieza:", 10, y);
-  y += 10;
-  fechas.forEach(f => {
-    doc.text(`${f.nombre}: ${f.ultima_limpieza || "No registrada"}`, 15, y);
-    y += 10;
+  let y=40;
+  doc.text("Depósitos y última limpieza:",10,y);
+  y+=10;
+  depositosData.forEach((d,i)=>{
+    const val = document.getElementById(`fecha_${i}`).value || "No registrada";
+    doc.text(`${d.nombre}: ${val}`,15,y);
+    y+=10;
   });
+  if(archivos.length>0){
+    doc.text("Archivos adjuntos:",10,y);
+    y+=10;
+    archivos.forEach(f=>{doc.text(f.name,15,y); y+=10;});
+  }
+  doc.save(`resguardo_${usuario}_${Date.now()}.pdf`);
+}
 
-  if (archivos.length > 0) {
-    doc.text("Archivos adjuntos:", 10, y);
-    y += 10;
-    archivos.forEach(f => { doc.text(f.name, 15, y); y += 10; });
+// Botón firmar y enviar
+document.getElementById("firmarBtn").addEventListener("click", async()=>{
+  document.getElementById("mensaje").textContent = "";
+
+  // 1️⃣ Subir archivos a Drive
+  if(archivos.length>0){
+    const fd = new FormData();
+    archivos.forEach((f,i)=>fd.append("file"+i,f));
+    try{
+      await fetch(URL_DRIVE,{method:"POST", body: fd});
+    }catch(err){
+      console.error(err);
+      document.getElementById("mensaje").textContent="Error subiendo archivos a Drive";
+      return;
+    }
   }
 
-  doc.save(`resguardo_${usuario}_${Date.now()}.pdf`);
-  document.getElementById("mensaje").textContent = "Formulario firmado y resguardo PDF generado";
+  // 2️⃣ Generar PDF local
+  generarPDF();
+
+  // 3️⃣ Enviar datos resumidos a Google Forms
+  const fdForm = new FormData();
+  fdForm.append(FORM_ENTRIES.municipio, usuario);
+  depositosData.forEach((d,i)=>{
+    const val = document.getElementById(`fecha_${i}`).value || "";
+    fdForm.append(FORM_ENTRIES.depositos[i], val);
+  });
+  const nombresArchivos = archivos.map(f=>f.name).join(", ");
+  fdForm.append(FORM_ENTRIES.archivos,nombresArchivos);
+
+  try{
+    await fetch(URL_FORM,{method:"POST", mode:"no-cors", body:fdForm});
+  }catch(err){console.warn("No se pudo enviar a Forms, pero PDF y Drive OK");}
+
   archivos = [];
   mostrarArchivos();
+  document.getElementById("mensaje").textContent="Formulario firmado y enviado correctamente";
 });
-
-function cerrarSesion() {
-  localStorage.removeItem("usuarioActual");
-  window.location.href = "login.html";
-}
 </script>
 
 </body>
