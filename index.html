@@ -2,33 +2,64 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Portal EIEL</title>
+<title>Panel Municipal</title>
 <style>
-body { font-family: Arial; margin: 20px; }
-a { display: block; margin: 10px 0; font-size: 18px; }
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 450px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover { background: #125ea3; }
+.logout {
+  background: #b71c1c;
+}
+.logout:hover {
+  background: #7f0000;
+}
 </style>
-</head>
-<body>
-
-<h2>Portal EIEL - Ayuntamiento</h2>
-
-<p>Municipio: <b id="municipio"></b></p>
-
-<h3>Seleccione el formulario</h3>
-<a href="form-agua.html">💧 Infraestructura de Agua</a>
-
-<button onclick="logout()">Cerrar sesión</button>
-
 <script>
-// Si no hay login, volver al login
-if (!localStorage.getItem("municipio")) {
+// Evita entrar sin login
+if (!localStorage.getItem("usuarioActual")) {
   window.location.href = "login.html";
 }
+</script>
+</head>
 
-document.getElementById("municipio").textContent = localStorage.getItem("municipio");
+<body>
+<div class="container">
+  <h2>Panel de gestión municipal</h2>
 
-function logout() {
-  localStorage.clear();
+  <button class="btn" onclick="location.href='form-agua.html'">📄 Formulario Agua</button>
+  <button class="btn" onclick="location.href='form-energia.html'">⚡ Formulario Energía</button>
+  <button class="btn" onclick="location.href='form-residuos.html'">♻️ Formulario Residuos</button>
+
+  <button class="btn logout" onclick="cerrarSesion()">🚪 Cerrar sesión</button>
+</div>
+
+<script>
+function cerrarSesion() {
+  localStorage.removeItem("usuarioActual");
   window.location.href = "login.html";
 }
 </script>
