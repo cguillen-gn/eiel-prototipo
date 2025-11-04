@@ -16,30 +16,24 @@ input, button { width: 100%; max-width: 300px; padding: 8px; margin: 6px 0; }
 
 <input id="username" placeholder="Usuario">
 <input id="password" type="password" placeholder="Contraseña">
-<button id="loginBtn">Entrar</button>
+<button id="loginBtn" type="button">Entrar</button>
+
 
 <p id="mensaje" style="color:red;"></p>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const usuarios = { "aspe":"1234", "elda":"abcd", "alcoy":"2025" };
-  
-  const boton = document.getElementById("loginBtn");
-  boton.addEventListener("click", function() {
-    const u = document.getElementById("username").value.toLowerCase().trim();
+document.getElementById("loginBtn").addEventListener("click", function() {
+    const u = document.getElementById("username").value.trim().toLowerCase();
     const p = document.getElementById("password").value.trim();
-    
-    console.log("Usuario:", u, "Pass:", p);
-    
-    if (usuarios[u] && usuarios[u] === p) {
-      localStorage.setItem("municipio", u);
-      window.location.href = "index.html";
+    if(u === "aspe" && p === "1234") {
+        localStorage.setItem("municipio", u);
+        window.location.href = "index.html";
     } else {
-      alert("Usuario o contraseña incorrectos");
+        alert("Usuario o contraseña incorrectos");
     }
-  });
 });
 </script>
+
 
 </body>
 </html>
