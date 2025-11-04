@@ -6,23 +6,26 @@
 <style>
 body { font-family: Arial; margin: 20px; }
 input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; max-width: 400px; }
+ul { list-style: none; padding: 0; }
+li { margin: 5px 0; }
+.borrar { color: red; cursor: pointer; margin-left: 10px; font-weight: bold; }
 </style>
 </head>
 <body>
 
 <h2>Formulario Agua</h2>
-
 <p>Municipio: <span id="municipio"></span></p>
 
-<input type="text" id="campo1" placeholder="Ejemplo de campo">
-<input type="file" id="archivo1">
-<button id="guardarBtn">Guardar</button>
+<input type="file" id="archivoInput" multiple>
+<ul id="archivosAdjuntos"></ul>
+
+<button id="firmarBtn">Firmar y enviar</button>
 <button onclick="cerrarSesion()">Cerrar sesión</button>
 
 <p id="mensaje" style="color:green;"></p>
 
 <script>
-// Comprobar sesión
+// Sesión
 const usuario = localStorage.getItem("usuarioActual");
 if (!usuario) {
   window.location.href = "login.html";
@@ -30,15 +33,50 @@ if (!usuario) {
   document.getElementById("municipio").textContent = usuario;
 }
 
-// Guardar datos y archivos (demo)
-document.getElementById("guardarBtn").addEventListener("click", function() {
-  const campo1 = document.getElementById("campo1").value.trim();
-  const archivo1 = document.getElementById("archivo1").files[0];
+// Array temporal para archivos
+let archivos = [];
 
-  // Aquí podrías guardar en localStorage o enviar al backend
-  console.log("Datos guardados:", { campo1, archivo1 });
+// Adjuntar archivos automáticamente al seleccionar
+document.getElementById("archivoInput").addEventListener("change", function(e) {
+  for (const file of e.target.files) {
+    archivos.push(file);
+  }
+  mostrarArchivos();
+  // limpiar input para permitir volver a añadir el mismo archivo si se quiere
+  e.target.value = "";
+});
 
-  document.getElementById("mensaje").textContent = "Datos guardados correctamente (ver consola)";
+// Mostrar lista de archivos con botón de borrar
+function mostrarArchivos() {
+  const lista = document.getElementById("archivosAdjuntos");
+  lista.innerHTML = "";
+  archivos.forEach((f, i) => {
+    const li = document.createElement("li");
+    li.textContent = f.name;
+    const btn = document.createElement("span");
+    btn.textContent = "✖";
+    btn.className = "borrar";
+    btn.onclick = () => {
+      archivos.splice(i, 1);
+      mostrarArchivos();
+    };
+    li.appendChild(btn);
+    lista.appendChild(li);
+  });
+}
+
+// Botón firmar y enviar
+document.getElementById("firmarBtn").addEventListener("click", function() {
+  if (archivos.length === 0) {
+    alert("No hay archivos adjuntos");
+    return;
+  }
+
+  // Aquí simularíamos envío, por ejemplo:
+  console.log("Archivos enviados:", archivos);
+  archivos = [];
+  mostrarArchivos();
+  document.getElementById("mensaje").textContent = "Archivos firmados y enviados correctamente";
 });
 
 function cerrarSesion() {
