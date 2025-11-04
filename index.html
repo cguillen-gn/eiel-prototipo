@@ -34,7 +34,7 @@ function login() {
 
   if (credenciales[u] && credenciales[u] === p) {
     sessionStorage.setItem("usuario", u);
-    window.location.href = "form-agua.html";
+    window.location = "menu.html";
   } else {
     document.getElementById("msg").innerText = "Usuario o contraseña incorrectos.";
   }
@@ -42,3 +42,4 @@ function login() {
 </script>
 </body>
 </html>
+
