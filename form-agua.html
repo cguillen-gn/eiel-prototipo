@@ -50,14 +50,13 @@ button:hover { background:#145a9c; }
 // CONFIG
 // ------------------------
 const URL_DRIVE = "https://script.google.com/macros/s/AKfycbwlBX0c9UToC0-lU-Pk2FqS-fBCuY_Nq23_NUnb4ekUjLBkOf7itt5edUU3r-TV2FmnpQ/exec";
-const URL_GOOGLE_FORMS = "https://docs.google.com/forms/d/e/1FAIpQLSc84PLY4O2wM9ek3v6L14DzZ8jcqDtFeKOK01i38s7ttPt0Ng/formResponse"; // 
+const URL_GOOGLE_FORMS = "https://docs.google.com/forms/d/e/1FAIpQLSc84PLY4O2wM9ek3v6L14DzZ8jcqDtFeKOK01i38s7ttPt0Ng/formResponse";
 
 let municipio = localStorage.getItem("usuarioActual") || "";
 document.getElementById("muniName").textContent = municipio;
 
 // ------------------------
 // DEPOSITOS — DE EJEMPLO
-// (luego los cargarás desde PostgreSQL)
 // ------------------------
 let depositos = [
   { nombre:"Depósito Alto", fecha:"" },
@@ -109,51 +108,128 @@ function renderArchivos(){
 }
 
 // ------------------------
-// ENVIAR
+// SUBIR ARCHIVOS A DRIVE
 // ------------------------
-document.getElementById("firmarBtn").addEventListener("click", async()=>{
+async function subirArchivosADrive() {
+  if (archivos.length === 0) {
+    console.log("No hay archivos para subir");
+    return true;
+  }
 
-  console.log("Archivos antes de enviar:", archivos); // ✅ añade esto
+  console.log("📤 Subiendo", archivos.length, "archivos a Drive...");
+
+  try {
+    // Convertir cada archivo a base64
+    const promises = archivos.map((file, index) => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        
+        reader.onload = (e) => {
+          const base64 = e.target.result.split(',')[1]; // Quitar el prefijo "data:..."
+          resolve({
+            index: index,
+            data: base64,
+            name: file.name,
+            type: file.type
+          });
+        };
+        
+        reader.onerror = (e) => reject(e);
+        reader.readAsDataURL(file);
+      });
+    });
+
+    const archivosBase64 = await Promise.all(promises);
+    console.log("✅ Archivos convertidos a base64");
+
+    // Crear el objeto de datos para enviar
+    const datos = {
+      municipio: municipio
+    };
+
+    // Agregar cada archivo con su metadata
+    archivosBase64.forEach((archivo) => {
+      datos[`file${archivo.index}`] = archivo.data;
+      datos[`file${archivo.index}_name`] = archivo.name;
+      datos[`file${archivo.index}_type`] = archivo.type;
+    });
+
+    // Convertir a formato URL-encoded
+    const formBody = Object.keys(datos)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(datos[key]))
+      .join('&');
+
+    console.log("📡 Enviando datos a Apps Script...");
+
+    // Enviar a Apps Script
+    const response = await fetch(URL_DRIVE, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: formBody
+    });
+
+    const resultado = await response.json();
+    console.log("📥 Respuesta de Drive:", resultado);
+
+    if (resultado.status === "ok") {
+      console.log(`✅ ${resultado.archivosSubidos} archivos subidos correctamente`);
+      return true;
+    } else {
+      console.error("❌ Error en la subida:", resultado.message);
+      return false;
+    }
+
+  } catch (err) {
+    console.error("❌ Error subiendo archivos:", err);
+    return false;
+  }
+}
+
+// ------------------------
+// ENVIAR - BOTÓN PRINCIPAL
+// ------------------------
+document.getElementById("firmarBtn").addEventListener("click", async () => {
+  console.log("🚀 Iniciando envío...");
+  console.log("Archivos a enviar:", archivos.length);
+  
   document.getElementById("mensaje").textContent = "Procesando...";
 
-  // ✅ 1. Subir archivos a Drive vía Apps Script
-  if(archivos.length>0){
-    const fd = new FormData();
-    archivos.forEach((f,i)=>fd.append("file"+i,f));
-    fd.append("municipio", municipio);
-
-    try{
-    await fetch(URL_DRIVE, { 
-      method: "POST",
-      body: fd,
-      mode: "no-cors"
-    });
-    }catch(err){
-      document.getElementById("mensaje").textContent = "❌ Error subiendo archivos a Drive";
-      console.error(err);
-      return;
-    }
+  // ✅ 1. Subir archivos a Drive
+  const driveOk = await subirArchivosADrive();
+  
+  if (!driveOk && archivos.length > 0) {
+    document.getElementById("mensaje").textContent = "❌ Error subiendo archivos a Drive";
+    return;
   }
 
   // ✅ 2. Enviar datos a Google Forms
   const formData = new FormData();
   formData.append("entry.960913048", municipio);
   formData.append("entry.312379068", JSON.stringify(depositos));
-  formData.append("entry.1907656835", archivos.map(a=>a.name).join(", "));
+  formData.append("entry.1907656835", archivos.map(a => a.name).join(", "));
 
-  try{
-    await fetch(URL_GOOGLE_FORMS, { method:"POST", body: formData, mode:"no-cors" });
-  }catch(err){
+  try {
+    await fetch(URL_GOOGLE_FORMS, { 
+      method: "POST", 
+      body: formData, 
+      mode: "no-cors" 
+    });
+    console.log("✅ Datos enviados a Google Forms");
+  } catch (err) {
+    console.error("❌ Error enviando a Forms:", err);
     document.getElementById("mensaje").textContent = "❌ Error enviando datos a Google Forms";
-    console.error(err);
     return;
   }
 
   // ✅ 3. Confirmación
   document.getElementById("mensaje").textContent = "✅ Datos enviados correctamente";
-
-  // ✅ 4. Descargar PDF local (si ya tienes esta función)
-  if(typeof generarPDFResumen === "function"){ generarPDFResumen(); }
+  
+  // ✅ 4. Descargar PDF local (si existe)
+  if (typeof generarPDFResumen === "function") {
+    generarPDFResumen();
+  }
 });
 </script>
 
