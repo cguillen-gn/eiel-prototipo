@@ -55,22 +55,26 @@ const URL_GOOGLE_FORMS = "https://docs.google.com/forms/d/e/1FAIpQLSc84PLY4O2wM9
 let municipio = localStorage.getItem("usuarioActual") || "";
 document.getElementById("muniName").textContent = municipio;
 
-async function cargarDepositos() {
-  try {
-    const resp = await fetch(`http://127.0.0.1:5000/api/depositos?mun=${municipio}`);
-    const data = await resp.json();
+async function cargarDepositosDesdeServidor() {
+  let muni = localStorage.getItem("usuarioActual");
 
+  try {
+    const res = await fetch(`http://127.0.0.1:5000/api/depositos?mun=${muni}`);
+    const data = await res.json();
+
+    // Transformamos los datos del servidor al formato que tu UI espera
     depositos = data.map(d => ({
       nombre: d.nombre,
-      fecha: d.limpieza || "" 
+      fecha: d.limpieza || ""
     }));
 
     pintarTabla();
-  } catch (e) {
-    console.error("Error cargando depósitos:", e);
-    alert("❌ No se pudieron cargar los depósitos desde el servidor");
+  } catch (error) {
+    console.error("Error cargando depósitos", error);
+    document.getElementById("mensaje").textContent = "⚠️ Error cargando depósitos";
   }
 }
+
 
 function pintarTabla(){
   let html = "";
@@ -84,7 +88,7 @@ function pintarTabla(){
 }
 
 let depositos = [];
-cargarDepositos();
+cargarDepositosDesdeServidor();
 
 function cambiarFecha(i, val){
   depositos[i].limpieza = val;
