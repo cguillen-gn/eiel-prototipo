@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 088</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 088 (088)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>NUEVO MERCADO MUNICIPAL DE ABASTOS DE MONFORTE DEL CID</td>
+  <td>PLAN PLANIFICA 2020-23 BOP: 20/07/2022</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RETÉN PARA POLICÍA LOCAL DE MONFORTE DEL CID</td>
+  <td>PLAN PLANIFICA 2020-23 BOP: 20/07/2022</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>IES LAS NORIAS (03015099). INSTALACION DE PERGOLAS O MARQUESINAS PARA SOMBRA EN EL PATIO.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>EL OBJETO DEL CONTRATO ES LA EJECUCIÓN DE LAS OBRAS ES LA IMPLANTACIÓN DE UN ASCENSOR  EN EL AUDITORIO MUNICIPAL “FERNANDO MARTÍNEZ BELTRÁN”</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIENTO Y MEJORA DEL POLÍGONO INDUSTRIAL LAS NORIAS UBZ-8</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2024</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIE NTO CAFÉ BAR DEL POLIDEPORTIVO MUNICIPAL Y DEL ESPACIO LIBRE ANEXO</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>SUPRESIÓN DE BARRERAS ARQUITECTÓNICAS EN EL NÚCLEO HISTÓRICO TRADICIONAL</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPAVIMENTACIÓN DE UN TRAMO DEL CAMINO DE SAN VICENTE</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2024. BOP: 12/7/2024.</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>IMPLANTACIÓN DE UN ASCENSOR EN AUDITORIO MUNICIPAL</td>
+  <td>ACCESIBILIDAD CASAS CONSISTORIALES Y EDIF. PÚBLICOS DESTINADOS A 3ª EDAD, DISCAPACIDAD O DIVERSIDAD FUNCIONAL Y A OTROS USOS PÚBLICOS 2023. DOGV: 13/04/2023</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>AMPLIACIÓN DEL CENTRO DE SALUD DE MONFORTE DEL CID (ALICANTE), PERTENECIENTE AL DEPARTAMENTO DE SALUD DE ALICANTE-HOSPITAL GENERAL</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADQ. PARA INSTALACIÓN DE LUMINARIAS SOLARES EN CAMINOS Y VÍAS RURALES DE MONFORE DEL CID</td>
+  <td>ADQUISICIÓN DE LUMINARIAS Y ELEM. DE SEG. VIAL EN VÍAS Y CAMINOS, POB.  <20000 HAB. 2024. BOP: 19/07/2024.</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>

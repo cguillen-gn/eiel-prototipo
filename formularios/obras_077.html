@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 077</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 077 (077)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>CONSTRUCCIÓN DE NAVE ALMACÉN EN TERRENOS MUNICIPALES</td>
+  <td>PLAN PLANIFICA 2020-23 BOP: 20/07/2022</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CERRAMIENTO Y ADECUACIÓN PISTA POLIDEPORTIVA CUBIERTA</td>
+  <td>PLAN PLANIFICA 2020-23 BOP: 20/07/2022</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>AMPLIACIÓN Y SUSTITUCIÓN DE LA RED DE ALCANTARILLADO EN LAS CALLES SAN JUAN Y HORNO DE HONDÓN DE LAS NIEVES (EXPTE. 2022/029- IDCH).</td>
+  <td>REALIZACIÓN Y MEJORA INFRAS DE ABAST. Y SANEAM. A EJEC. POR LA DIPUTACIÓN 2022 BOP: 03/01/2023</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN DE PAVIMENTO DEPORTIVO EN INTERIOR DE PABELLÓN CUBIERTO DEL POLIDEPORTIVO</td>
+  <td>PLAN +CERCA. 2023. BOP: 26/9/2023.</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN DE LA RED DE ALCANTARILLADO ENTRE LAS CALLES SAN JOSÉ Y SAN JUAN DE HONDÓN DE LAS NIEVES (EXPTE. 2023/046-IDCH)</td>
+  <td>REALIZACIÓN Y MEJORA INFRAS DE ABAST. Y SANEAM. A EJEC. POR LA DIPUTACIÓN 2023 BOP: 23/04/2024</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN DE UN TANQUE DE TORMENTAS JUNTO A AL ESTACIÓN DE BOMBEO DE AGUAS RESIDUALES (E.B.A.R) QUE BOMBEA A LA EDAR DE HONDÓN DE LAS NIEVES</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ILUMINACIÓN CAMINO CEMENTERIO DE HONDÓN DE LAS NIEVES</td>
+  <td>ADQUISICIÓN DE LUMINARIAS Y ELEM. DE SEG. VIAL EN VÍAS Y CAMINOS, POB.  <20000 HAB. 2024. BOP: 19/07/2024.</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA ENVOLVENTE TÉRMICA MERCADO MUNICPIAL</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENOVACIÓN CONDUCCIÓN DN200 DEPÓSITO GENERAL DE LA CANALOSA EN HONDÓN DE LAS NIEVES (EXPTE. 2024/010-AACH).</td>
+  <td>REALIZACIÓN Y MEJORA INFRAS DE ABAST. EN ALTA, CAPTACIÓN Y REGULACIÓN A EJEC. LA DIPUTACIÓN 2024 BOP: 07/01/2025</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>NUEVA RED DE AGUA POTABLE EN AVDA. NOVELDA, CALLE DUQUE SUÁREZ Y CAMINO LOMETA, EN HONDÓN DE LOS FRAILES (ALICANTE)</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA DE INSTALACIONES DEL POLIGONOINDUSTRIAL BAJO SOMBRA</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2025-2026</td>
+
+  <td>
+    
+      <select name="estado_11">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>PAVIMENTACIÓN DE CAMINOS EN LAS PARTIDAS ALMISTECH Y PILARES EN EL TÉRMINO MUNICIPAL DE HONDÓN DE LAS NIEVES</td>
+  <td>INVERSIONES EN ZONAS VERDES DE TIT. MUNICIPAL 2025 Línea B BOP: 05/08/2025</td>
+
+  <td>
+    
+      <select name="estado_12">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>SEÑALIZACIÓN E ILUMINACIÓN DE CAMINOS EN EL TÉRMINO MUNICIPAL DE HONDÓN DE LAS NIEVES</td>
+  <td>INVERSIONES EN ZONAS VERDES DE TIT. MUNICIPAL 2025 Línea C BOP: 05/08/2025</td>
+
+  <td>
+    
+      <select name="estado_13">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>VERTIDO DE LAS AGUAS RESIDUALES PROCEDENTES DEL SANEAMIENTO DE LA POBLACIÓN DE LA CANALOSA A LA RAMBLA DE LENTISCAR EN EL TÉRMINO MUNICIPAL DE HONDÓN DE LAS NIEVES.</td>
+  <td>REPARACIÓN (LÍNEA A) Y 1ER EST., REFORMA O GR REPARACIÓN (LÍNEA B) INFRAS DE ABAST. Y SANEAM. [LÍNEA A] 2025 BOP: 26/08/2025</td>
+
+  <td>
+    
+      <select name="estado_14">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>SUSTITUCIÓN DE LA RED DE AGUA POTABLE EN LA PARTIDA ALMISTECH</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_15">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>

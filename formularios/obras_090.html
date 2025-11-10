@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 090</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 090 (090)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>ACONDICIONAMIENTO DEL SÓTONO DEL CASAL DE LA TERCERA EDAD PARA LA INSTACIÓN DEL MUSEO DE LA FESTA.</td>
+  <td>None</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>EDIFICIO PARA BIBLIOTECA MUNICIPAL</td>
+  <td>PLAN PLANIFICA 2020-23 BOP: 20/07/2022</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP ARBRE BLANC (03012104). AULARI PER A LES UNITATS EDUCATIVES DE 5 ANYS Y CONSTRUCCIÓ GIMNÀS.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP NÚMERO 4 (03018714). CONSTR 3I+6P.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP EL SALVADOR (03006530). AMPLIACIÓN COMERDOR DEL CENTRO Y OBRAS DE REHABILITACIÓN DEL PABELLON INFANTIL Y PISTA POLIDEPORTIVA.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN DEL CAMÍ DELS PINETS</td>
+  <td>PLAN +CERCA 2023 BOP: 19/12/2023</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>EJECUCIÓN DE LAS OBRAS DEL PROYECTO NUEVO DEPÓSITO DE REGULACIÓN DE LA IDAM DE MUTXAMEL (ALICANTE)</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIE NTO DEL TALUD DE LAS TERRAZAS DE BONALBA</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>URBANIZACIÓN DE LA CALLE PINTOR LLORENÇ CASANOVA</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CARRIL CICLO- PEATONAL DESDE MUTXAMEL A URBANIZACIÓN BONALBA POR CV-800 Y CV- 773</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REFORMA DE LAS DEPENDENCIAS DEL JUZGADO DE PAZ</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_11">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CONSTRUCCIÓN DE UN BLOQUE DE 112 NICHOS EN EL CEMENTERIO MUNICIPAL DE MUTXAMEL.</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_12">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA Y MODERNIZACION DEL PARQUEINDUSTRIAL ACTUACIONES 2025-2026</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2025-2026</td>
+
+  <td>
+    
+      <select name="estado_13">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN ASCENSOR EN LA CASA CONSISTORIAL</td>
+  <td>ACCESIBILIDAD CASAS CONSISTORIALES Y EDIF. PÚBLICOS DESTINADOS A 3ª EDAD, DISCAPACIDAD O DIVERSIDAD FUNCIONAL Y A OTROS USOS PÚBLICOS 2025. DOGV: 29/05/2025</td>
+
+  <td>
+    
+      <select name="estado_14">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>

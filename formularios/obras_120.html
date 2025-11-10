@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 120</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 120 (120)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>CENTRO CULTURAL SAN MIGUEL DE SALINAS</td>
+  <td>PLAN PLANIFICA 2020-23 BOP: 20/07/2022</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CUBRIMIENTO Y REHABILITACIÓN DE GRADERÍO Y VESTUARIOS EN CAMPO DE FÚTBOL MONTESICO BLANCO</td>
+  <td>PLAN +CERCA 2022 BOP: 01/08/2022</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP GLORIA FUERTES. Cº LUMINARIA A LED. Cº VENTANAS A PVC. PINTURA EN VALLAS, PARED,APARCAMIENTO Y AULAS. PRE- INST. AIRE</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>EI 1ER CICLO MAESTRO ENRIQUE. HACER 2 AULAS NUEVAS Y CUARTO DE LIMPIEZA, AMPLIAR ALMACÉN, SALA PROFESORES, COMEDOR. VALLADO</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP GLORIA FUERTES. REFORMA, AMPLIACIÓ, AULA POLIVALENT, EFICIÈNCIA ENERGÈTICA, GENERACIÓ D'OMBRES I ACONDICIONAMENT DE PATIS</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>IES LOS ALCORES. SUSTITUC. CERRAMIENTO ALUMINIO. REPARAR HUNDIMIENTO DEL TERRENO, GRIETAS EN TABIQUES 1ª Y 2ª PLANTA.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CENTRO SOCIAL</td>
+  <td>PLAN +CERCA 2023 BOP: 19/12/2023</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>BIBLIOTECA</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>AMPLIACIÓN DE BIBLIOTECA EN C.E.I.P GLORIA FUERTES Y ADAPTACIÓN DE CONDICIONES DE ACCESIBILIDAD AL CENTRO DE EDUCACIÓN ESPECIAL.</td>
+  <td>Procedente de volcado de contratos menores de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REFORMA DE ZONA VERDE Y ÁREA DE JUEGOS DEL ADU-18 EXISTENTE EN SAN MIGUEL DE SALINAS, ENTRE LAS CALLES LO AGUIRRE Y LO ALMAZARICA</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADQUISICIÓN DE 8 LUMINARIAS LED SOLARES</td>
+  <td>INVERSIONES EN ZONAS VERDES DE TIT. MUNICIPAL 2025 Línea C BOP: 05/08/2025</td>
+
+  <td>
+    
+      <select name="estado_11">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRAS DE EMERGENCIA PARA LA RECONSTRUCCIÓN DEL PUENTE EN EL P.K. 18+250 DE LA CV-95 SOBRE LA RAMBLA DE LOS QUILES. SAN MIGUEL DE SALINAS</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>

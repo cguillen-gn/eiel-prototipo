@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 121</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 121 (121)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>IMPLANTACIÓN DE SISTEMAS URBANOS DE DRENAJE SOSTENIBLE (SUDS) EN AVDA. VICENTE</td>
+  <td>PLAN TERRITORIAL DE SOSTENIBILIDAD TURÍSTICA EN DESTINO COMUNITAT VALENCIANA 2022 (PTSTD CV 22)</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>EJECUCIÓN DE UN COLECTOR DE ALCANTARILLADO EN LAS CALLE ZORRILLA Y MARIANO BENLLIURE DE SANTA POLA (EXPTE. 2023/027-IDCH)</td>
+  <td>REALIZACIÓN Y MEJORA INFRAS DE ABAST. Y SANEAM. A EJEC. POR LA DIPUTACIÓN 2023 BOP: 23/04/2024</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RED DE ALCANTARILLADO DE LA CALLE SAN ANTONIO.</td>
+  <td>REPARACIÓN (LÍNEA A) Y 1ER EST., REFORMA O GR REPARACIÓN (LÍNEA B) INFRAS DE ABAST. Y SANEAM. [LÍNEA A] 2025 BOP: 26/08/2025</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP GRAN ALACANT (03018222).CONSTRUCCIÓ 24  + 8 B (CT+HCS) + 2 CC.FF. + JUEGOS P.V. + CAFETERIA.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP HISPANIDAD (03008204). CONSTRUCCION REPOSICIÓN EN EL MISMO SOLAR CON DEMOLICIÓN EDIFICIOS EXISTENTES.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>TRABAJOS D ADECUACIÓN DE INSTALACIONES DEL CENTRO DE SALUD SANTA POLA</td>
+  <td>Procedente de volcado de contratos menores de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRA AMPLIACIÓN CENTRO DE SALUD DE SANTA POLA DEL DEPARTAMENTO DE SALUD DEL ELCHE - HOSPITAL GENERAL</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN PARTE SUPERIOR DE LA FACHADA DE LA BIBLIOTECA INTERNACIONAL DE GRAN ALACANT</td>
+  <td>Procedente de volcado de contratos menores de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORAS Y OPTIMIZACIÓN DE INSTALACIONES COMPLEJO DEPORTIVO LARA GONZÁLEZ</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>IES GRAN ALACANT (03021117). NOVA CONSTRUCCIÓ.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENATURALIZACIÓN DE LA LÍNEA COSTERA EN LA AVDA BLASCO IBÁÑEZ</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_11">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENOVACIÓN DE RED DE AGUA POTABLE EN LAS CALLES AVDA. DE RONDA Y TAMARIT.</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_12">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CREACIÓN DEL CENTRO DE INTERPRETACIÓN Y RECEPCIÓN DE VISITANTES SIERRA DE SANTA POLA</td>
+  <td>PLAN TERRITORIAL DE SOSTENIBILIDAD TURÍSTICA EN DESTINO COMUNITAT VALENCIANA 2022 (PTSTD CV 22)</td>
+
+  <td>
+    
+      <select name="estado_13">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RESTAURACIÓN AMBIENTAL Y RENATURALIZACIÓN DE LA LÍNEA COSTERA EN LA AVDA. VALENCIA Y AVDA. BLASCO IBÁÑEZ, SANTA POLA (ALICANTE).</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_14">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA INFRAESTRUCTURAS Y SERVICIOS EN ELPOLÍGONO IN-2 DE SANTA POLA</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2025-2026</td>
+
+  <td>
+    
+      <select name="estado_15">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>PSTD_4_13_NUCLEO ACCESIBLE. LICITACIÓN PARA CONTRATO DE EJECUCIÓN DE OBRAS DE ADAPTACIÓN DEL NÚCLEO URBANO A CRITERIOS DE ACCESIBILIDAD</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_16">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA DE LAS INFRAESTRUCTURAS POLIGONO INDUSTRIAL IN2</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2024</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP GRAN ALACANT. CONSTRUCCIÓ 3I+9I+18P+MENJ (540,2T)</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>LICITACIÓN PARA LA CONTRATACIÓN DE OBRAS DE VIALES CEIP GRAN ALACANT</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>COLECTOR DE PLUVIALES EN CTRA DE ELCHE- SANTA POLA</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>

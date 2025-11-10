@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 116</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 116 (116)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>RENOVACIÓN DE LA RED DE SANEAMIENTO EN LA CALLE NUEVA DE SALINAS (EXPTE. 2025/061-IACH).</td>
+  <td>REPARACIÓN (LÍNEA A) Y 1ER EST., REFORMA O GR REPARACIÓN (LÍNEA B) INFRAS DE ABAST. Y SANEAM. [LÍNEA B] 2025 BOP: 04/09/2025</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN ASCENSOR EN EL EDFICIO AUXILIAR DEL AYUNTA- MIENTO-CASA DE LA CULTURA</td>
+  <td>ACCESIBILIDAD CASAS CONSISTORIALES Y EDIF. PÚBLICOS DESTINADOS A 3ª EDAD, DISCAPACIDAD O DIVERSIDAD FUNCIONAL Y A OTROS USOS PÚBLICOS 2025. DOGV: 29/05/2025</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA DEL CAMINO LA LAGUNA EN SALINAS</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2021. BOP: 14/09/2021.</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADECUACIÓN Y PAVIMENTACIÓN DEL CAMINO DE VITORO MEDIANTE TRIPLE TRATAMIENTO DE GRAVILLA EN SALINAS</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2024. BOP: 12/7/2024.</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA, MODERNIZACIÓN Y DOTACIÓN DE INFRAESTRUCTURAS Y SERVICIOS EN EL POLÍGONO INDUSTRIAL LA NORIA 1 2024</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2024</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENOVACIÓN RED DE AGUA POTABLE EN C/LA MOLINETA CON CAMINO LA LAGUNA Y AVDA. JUAN CARLOS I DE SALINAS (EXPTE. 2021/031-IDCH).</td>
+  <td>PLAN +AGUA 2021 [LÍNEA 1] BOP: 31/05/2022</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP VIRGEN DEL ROSARIO. CONSTRUCCIÓN AULARIO INFANTIL Y REFORMA DEL EDIFICIO EXISTENTE, MEJORAS EN EL PATIO Y GIMNASIO</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENOVACIÓN DE LA RED DE AGUA POTABLE DEL DISEMINADO</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>NAVE INDUSTRIAL PARA USO DE ALMACÉN MUNICIPAL</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADECUACIÓN DE DIVERSOS CAMINOS MEDIANTE TRIPLE TRATAMIENTO</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>SUMINISTRO DE LUMINARIAS SOLARES PARA PARAJE CASA DE BIAR EN SALINAS</td>
+  <td>ADQUISICIÓN DE LUMINARIAS Y ELEM. DE SEG. VIAL EN VÍAS Y CAMINOS, POB.  <20000 HAB. 2024. BOP: 19/07/2024.</td>
+
+  <td>
+    
+      <select name="estado_11">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADECUACIÓN Y PAVIMENTACIÓN DE LOS CAMINOS CÁMARA 1 Y 2 MEDIANTE TRIPLE TRATAMIENTO DE GRAVILLA EN SALINAS (ALICANTE)</td>
+  <td>INVERSIONES EN ZONAS VERDES DE TIT. MUNICIPAL 2025 Línea B BOP: 05/08/2025</td>
+
+  <td>
+    
+      <select name="estado_12">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>SUMINISTRO DE LUMINARIAS SOLARES PARA EL CAMINO DE LA PALETA (LA VIRGEN) EN EL TÉRMINO MUNICIPAL DE SALINAS (ALICANTE)</td>
+  <td>INVERSIONES EN ZONAS VERDES DE TIT. MUNICIPAL 2025 Línea C BOP: 05/08/2025</td>
+
+  <td>
+    
+      <select name="estado_13">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REASFALTADO DE VARIAS CALLES (AVDA. HISPANOAMÉRICA Y C/ LA NORIA)</td>
+  <td>None</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>

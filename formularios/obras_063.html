@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 063</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 063 (063)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>REPARACIÓN DE TRAMO DE CALLE PROMETEU</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REHABILITACIÓN Y ACONDICIONAMIENTO DEL EDIFICIO “LA NOVA FAROLETA” DE DÉNIA</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REHABILITACIÓN DEL FIRME DE LA CARRETERA CV-730, DENIA A LAS MARINAS, ENTRE LOS PPKK 5+200 Y 8+900</td>
+  <td>PLAN PROVINCIAL DE MEJORA DE LA RED VIARIA DE TIT. DE LA DIPUTACIÓN 2024-2025 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEE PÚB. COMARCAL RAQUEL PAYA (03012013). NOVA CONSTRUCCIÓ.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRAS PARA LA FINALIZACIÓN DE ACCESOS A LA PARCELA DEL NUEVO CPEE RAQUEL PAYÀ</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>AMPLIACIÓN Y REFORMA DE EDIFICIO POLIVALENTE Y ASOCIACIONES</td>
+  <td>PLAN +CERCA. 2023. BOP: 26/9/2023.</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REURBANIZACIÓN DE LA C/XIMO DE L'ALMÀSSERA Y C/ESCOLES</td>
+  <td>PLAN +CERCA. 2023. BOP: 26/9/2023.</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>DESBROCE Y LIMPIEZA DE CAMINO RURAL CAMÍ DEL CLOT DEL MELLAT</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL POB. <5000 HAB. 2024 LÍNEAS 1 Y 2. BOP: 18/07/2024</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRAS DE IMPERMEABILIZACIÓN DE LA CUBIERTA DE LA CASA C/ CAVALLERS, 3, SEDE DEL MUSEO DE HISTORIA DE LA CIUDAD.</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN DE ALUMBRADO PÚBLICO EN LA CALLE FÉNIX DESDE CALLE ESCORPÍ A CALLE IO</td>
+  <td>PLAN +CERCA 2023 BOP: 19/12/2023</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN DEL CAMÍ DEL POU DE SIMÓ</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL POB. <5000 HAB. 2024 LÍNEAS 1 Y 2. BOP: 18/07/2024</td>
+
+  <td>
+    
+      <select name="estado_11">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP PARE PERE (03004260). ADEQUACIÓ, REHABILITACIÓ I CONSTRUCCIÓ DE MENJADOR.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_12">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>IMPLANTACIÓN DE UN TRAMO DE LA RED MUNICIPAL DE ALCANTARILLADO E INSTALACIÓN DE EQUIPO DE REMONTE HASTA CALLE MAYOR EN JESÚS POBRE (EXPTE. 2021/023-IDCH).</td>
+  <td>PLAN +AGUA 2021 [LÍNEA 1] BOP: 31/05/2022</td>
+
+  <td>
+    
+      <select name="estado_13">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REHABILITACIÓN DEL FIRME DE LA CV-730 ENTRE EL PK 8+900 Y EL PK 11+600</td>
+  <td>PLAN PROVINCIAL DE MEJORA DE LA RED VIARIA DE TIT. DE LA DIPUTACIÓN 2023 BOP: 18/04/2023</td>
+
+  <td>
+    
+      <select name="estado_14">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CONSERVATORI PROFESSIONAL DE MÚSICA TENOR  CORTIS. CONSTRUCCIÓ NOU EDIFICI</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_15">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>IES MARIA IBARS (03004235). ADECUACIÓ/AMPLIACIÓ.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_16">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA DEL CAMINO DE ONDARA A DÉNIA, CONOCIDO COMO CAMÍ FONDO (LA XARA)</td>
+  <td>PLAN DE COOPERACIÓN A LAS OBRAS Y SERVICIOS DE COMPETENCIA MUNICIPAL 2019</td>
+
+  <td>
+    
+      <select name="estado_17">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>BACHEO Y REPARACIÓN DEL CAMÍ REAL.</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL POB. <5000 HAB. 2022 BOP: 26/8/2022</td>
+
+  <td>
+    
+      <select name="estado_18">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENOVACIÓN DE ACERAS EN AVDA. MONTGÓ, C/SENIJA, C/SETLA, C/AMPARO MERLE Y C/DEL VERGER</td>
+  <td>PLAN +CERCA 2023 BOP: 19/12/2023</td>
+
+  <td>
+    
+      <select name="estado_19">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRAS DE INSTALACIÓN DE ALUMBRADO PÚBLICO DE UN TRAMO DE LA CARRETERA DE LAS MARINAS, ZONA NOVA DÉNIA</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_20">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REURBANIZACIÓN DEL CARRER ELX Y ADYACENTES</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_21">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REURBANIZACIÓN DE VARIAS CALLES EN EL BARRI DE LES ROQUES</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_22">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>PROYECTO BÁSICO Y DE EJECUCIÓN DE CUBIERTA PARA LA PISTA POLIDEPORTIVA MUNICIPAL</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_23">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REFORMA DEL EDIFICIO CONOCIDO COMO CASA DEL VIDRE</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_24">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>PROYECTO DE REHABILITACIÓN DEL EDIFICIO TORRECREMADA</td>
+  <td>None</td>
+
+  <td>
+    
+      <select name="estado_25">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MERENDERO Y ZONA DE JUEGO INFANTIL EN EL BOSC DE DIANA</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_26">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>LUMINARIAS SOLARES EN EL CAMÍ RURAL DE CONEXIÓN CON EL CAMÍ REAL EN JESÚS POBRE</td>
+  <td>IMPULSO DE LAS INSTALACIONES FOTOVOLTAICAS PARA EL AUTOCONSUMO DE EDIFICIOS MUNICIPALES Y EL ALUMBRADO PÚBLICO EN MUNICIPIOS Y ENTIDADES LOCALES DE LA PROVINCIA DE ALICANTE, ANUALIDAD 2023. BOP: 25/08/2023</td>
+
+  <td>
+    
+      <select name="estado_27">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REFORMA DE NAU EN PTDA. MADRIGUERES SUD, 9NY (NAU GLORIETA)</td>
+  <td>Procedente de volcado de contratos menores de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_28">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENOVACIÓN DE LA RED DE AGUA POTABLE EN ACERAS DE LAS CALLES: SENIJA, AMPARO MERLE, VERGER Y AVDA. MONTGÓ</td>
+  <td>Procedente de volcado de contratos menores de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_29">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIE NTO DE LOS TERRENOS COLINDANTES A LA CASA DEL VIDRE PARA DOTARLA DE ACCESOS RODADO Y PEATONAL</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_30">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>GLORIETA EN LA INTERSECCIÓN DE LA CV-735 Y CV-738 Y MEJORA DE TRAZADO ENTRE EL PK 3+000 Y 3+150 DE LA CV-738</td>
+  <td>PLAN ESPECIAL DE MEJORA DE ACCESOS A MUNICIPIOS 2023-2024. BOP 18/04/2023</td>
+
+  <td>
+    
+      <select name="estado_31">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RENOVACIÓN DE PAVIMENTO DE CALZADA EN UN TRAMO DE LAS CALLES DIANA Y CARLOS SENTÍ</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_32">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN DE PASOS PEATONALESINTELIGENTES, NUEVOS HIDRANTES YASFALTADO DE VIALES</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2025-2026</td>
+
+  <td>
+    
+      <select name="estado_33">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>PLAN DE ASFALTADOS 2025</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_34">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRAS DE REMODELACIÓN DE PISTAS DEPORTIVAS EN LAS INSTALACIONES DE MADRIGUERES SUD - FASE 2</td>
+  <td>Procedente de volcado de licitaciones de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_35">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>BOMBA PARA LA INFRAESTRUCTURA DE REMONTE DE AGUAS FECALES EN JESÚS POBRE</td>
+  <td>None</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIENTO DE CAMÍ DE RACÓ DE TAFARRA</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2023. BOP: 24/7/2023.</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADQ. DE LUMINARIAS SOLARES EN EL CAMÍ RURAL DEL BISSEROT (JESÚS POBRE)</td>
+  <td>ADQUISICIÓN DE LUMINARIAS Y ELEM. DE SEG. VIAL EN VÍAS Y CAMINOS, POB. <20000 HAB. 2023. BOP: 05/09/2023.</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN DEL TRAMO ALTO "CAMINO A LOS CORRALES". TRAMO FINAL</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL (LINEA 1 y 2), POB. <5000 HAB. BOP: 11/6/2021</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>EJECUCIÓN DE UN TRAMO DE LA RED MUNICIPAL DE ALCANTARILLADO E INSTALACIÓN DE DOS EQUIPOS DE DEPURACIÓN Y CONEXIÓN A LA UNIDAD DE REMONTE</td>
+  <td>PLAN INVERSIONES FINANCIERAMENTE SOSTENIBLES 2019</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CONSTRUCCIÓN DE CUBIERTA PARA LAS GRADAS E INSTALACIÓN DE SOPORTES PARA MEJORA EN LA ILUMINACIÓN DE EVENTOS Y ACTOS EN LA PISTA POLIDEPORTIVA DE JESÚS POBRE</td>
+  <td>PLAN +DEPORTE 2022 BOP: 21/11/2022</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>

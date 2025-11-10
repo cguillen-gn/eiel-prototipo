@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario Obras - 129</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+th {
+  background: #eee;
+}
+select, input[type="checkbox"] {
+  font-size: 14px;
+}
+button {
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 100%;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #125ea3;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Formulario de Obras - 129 (129)</h2>
+
+<form id="frmObras">
+
+<table>
+<thead>
+<tr>
+  <th>Obra</th>
+  <th>Plan</th>
+  <th>Estado obra</th>
+  <th>Adjunta Proyecto</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>ADQ. DE LUMINARIAS LED SOLARES Y ELEMENTOS DE MEJORA DE LA SEGURIDAD VIAL (CAMINOS ALJIBE, BOGAR Y CASTILLO)</td>
+  <td>ADQUISICIÓN DE LUMINARIAS Y ELEM, DE SEG. VIAL EN VÍAS Y CAMINOS, POB.  <5000 HAB. 2022 BOP: 19/08/2022</td>
+
+  <td>
+    
+      <select name="estado_1">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN DE EQUIPOS ELECTROMECÁNICOS DEL POZO LLOSAR DE TIBI.</td>
+  <td>REPARACIÓN (LÍNEA A) Y 1ER EST., REFORMA O GR REPARACIÓN (LÍNEA B) INFRAS DE ABAST. Y SANEAM. [LÍNEA A] 2025 BOP: 26/08/2025</td>
+
+  <td>
+    
+      <select name="estado_2">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN DE ASCENSOR EN CASA CONSISTORIAL</td>
+  <td>ACCESIBILIDAD CASAS CONSISTORIALES Y EDIF. PÚBLICOS DESTINADOS A 3ª EDAD, DISCAPACIDAD O DIVERSIDAD FUNCIONAL Y A OTROS USOS PÚBLICOS 2025. DOGV: 29/05/2025</td>
+
+  <td>
+    
+      <select name="estado_3">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>CEIP LUIS GOSÁLBEZ (03008587). OBRAS DE ADECUACIÓN Y REFORMA DE C.E.I.P. TIBI.</td>
+  <td>GVA (PROGRAMA EDIFICANT)</td>
+
+  <td>
+    
+      <select name="estado_4">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN ELECTROMECÁNICA, DEPÓSITO REGULADOR Y CONDUCCIÓN DE ABASTECIMIENTO EN TIBI (EXPTE. 2024/025-AACH).</td>
+  <td>REALIZACIÓN Y MEJORA INFRAS DE ABAST. EN ALTA, CAPTACIÓN Y REGULACIÓN A EJEC. LA DIPUTACIÓN 2024 BOP: 07/01/2025</td>
+
+  <td>
+    
+      <select name="estado_5">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA Y PAVIMENTACIÓN DEL CAMÍ DEL LLOSAR</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2021. BOP: 14/09/2021.</td>
+
+  <td>
+    
+      <select name="estado_6">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>GRAN REPARACIÓN DE LAS REDES DE SANEAMIENTO MUNICIPAL DE PLAZA LA GLORIETA, MARTÍN CARBONELL Y PEÑA DEL T.M. DE TIBI (EXPTE. 2023/038-IDCH)</td>
+  <td>REALIZACIÓN Y MEJORA INFRAS DE ABAST. Y SANEAM. A EJEC. POR LA DIPUTACIÓN 2023 BOP: 23/04/2024</td>
+
+  <td>
+    
+      <select name="estado_7">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACCESIBILIDAD A LA CASA CONSISTORIAL</td>
+  <td>ACCESIBILIDAD CASAS CONSISTORIALES Y EDIF. PÚBLICOS DESTINADOS A 3ª EDAD, DISCAPACIDAD O DIVERSIDAD FUNCIONAL Y A OTROS USOS PÚBLICOS 2024. DOGV: 17/07/2024</td>
+
+  <td>
+    
+      <select name="estado_8">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADECUACIÓN SUPERFICIAL DE PLATAFORMA Y FIRME EN CAMINO TORROSELLES, EN TIBI</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2023. BOP: 24/7/2023.</td>
+
+  <td>
+    
+      <select name="estado_9">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIENTO (REPARACIÓN SIMPLE Y BACHEOS) DE LOS CAMINOS ALBABOR Y MARCOTA</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL POB. <5000 HAB. 2023 LÍNEAS 1 Y 2, 1ER PERIODO. BOP: 05/06/2023</td>
+
+  <td>
+    
+      <select name="estado_10">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>SUSTITUCIÓN DE CONDUCCIONES DE ABASTECIMIENTO DE AGUA POTABLE (Nº 1:RED ALTA BOMBEO POZO- DEPÓSITO LES REDONES, Nº 2 RED DE DISTRIBUCIÓN CAMINO PANTANO DESDE CRUCE ALBABOR, Nº 3 RED DE DISTRIBUCIÓN CASCO URBANO "C/ MAJOR, PZ. ESPAÑA Y PZ. CABISSOL")</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_11">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIE NTO DEL CAMINO RURAL LA ANCORNIA</td>
+  <td>PLAN PLANIFICA 2024-27 BOP: 14/06/2024</td>
+
+  <td>
+    
+      <select name="estado_12">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADQ. DE ELEMENTOS DE SEÑALIZACIÓN PARA LA SEGURIDAD VIAL.</td>
+  <td>ADQUISICIÓN DE LUMINARIAS Y ELEM. DE SEG. VIAL EN VÍAS Y CAMINOS, POB.  <20000 HAB. 2024. BOP: 19/07/2024.</td>
+
+  <td>
+    
+      <select name="estado_13">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN DE DAÑOS DEL CAMÍ DE LA PEDRERA DE TIBI</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2024. BOP: 12/7/2024.</td>
+
+  <td>
+    
+      <select name="estado_14">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIENTO DE LOS CAMINOS PANTANO, ALBABOR Y SENDA DE LA VACA</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL POB. <5000 HAB. 2024 LÍNEAS 1 Y 2. BOP: 18/07/2024</td>
+
+  <td>
+    
+      <select name="estado_15">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN Y RESTAURACIÓN DEL LAVADERO MUNICIPAL.</td>
+  <td>Procedente de volcado de contratos menores de contrataciondelestado.es</td>
+
+  <td>
+    
+      <select name="estado_16">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>MEJORA, MODERNIZACIÓN Y DOTACIÓN DE INFRAESTRUCTURAS YSERVICIOS EN EL PARQUE EMPRESARIAL MAIGMÓ, EN ELMUNICIPIO DE TIBI (ALICANTE)</td>
+  <td>IVACE: PARQUES EMPRESARIALES 2025-2026</td>
+
+  <td>
+    
+      <select name="estado_17">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>RESTABLECIMIENTO DEL CAMINO MUNICIPAL FOIETA-PEDRERA. TIBI</td>
+  <td>INVERSIONES EN ZONAS VERDES DE TIT. MUNICIPAL 2025 Línea B BOP: 05/08/2025</td>
+
+  <td>
+    
+      <select name="estado_18">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADQUISICIÓN DISPOSITIVOS DE MEJORA DE LA SEGURIDAD VIAL (SISTEMA DE VIDEO VIGILANCIA) EN EL TÉRMINO MUNICIPAL DE TIBI</td>
+  <td>INVERSIONES EN ZONAS VERDES DE TIT. MUNICIPAL 2025 Línea C BOP: 05/08/2025</td>
+
+  <td>
+    
+      <select name="estado_19">
+        <option value="">-- Seleccione --</option>
+        <option>No iniciada</option>
+        <option>En ejecución</option>
+        <option>Paralizada</option>
+        <option>Finalizada</option>
+        <option>Anulada</option>
+      </select>
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRAS DE ACONDICIONAMIENTO (BACHEO) DE LOS CAMINOS ALBABOR Y SENDA LA VACA</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL (LINEA 1 y 2), POB. <5000 HAB. BOP: 11/6/2021</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>OBRAS DE ACONDICIONAMIENTO DEL CAMINO RURAL LA RONESA, EN TIBI</td>
+  <td>Procedente de volcado de contratos menores de contrataciondelestado.es</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPARACIÓN DE LOS CAMINOS ALJIBE, PALLÉS Y FOIETA EL CONILL.</td>
+  <td>REPARACIONES Y CONSERVACIÓN DE CAMINOS DE TIT. NO PROVINCIAL POB. <5000 HAB. 2022 BOP: 26/8/2022</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIENTO DEL CAMINO DE CONEXIÓN CON LA ANTIGUA CARRETERA DE CASTALLA</td>
+  <td>INVERSIONES EN CAMINOS DE TIT. MUNICIPAL A EJEC. POR LOS AYTOS. 2022. BOP: 30/6/2022.</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>INSTALACIÓN DE LUMINARIAS SOLARES EN VARIOS CAMINOS RURALES DE TIBI</td>
+  <td>ADQUISICIÓN E INSTALACIÓN DE LUMINARIAS SOLARES EN VÍAS Y CAMINOS, POB. <5000 HAB., 2021 BOP: 19/10/2021</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>REPOSICIÓN DE TUBERÍAS DE ABASTECIMIENTO DE AGUA POTABLE EN AVDA. LLOMETES.</td>
+  <td>None</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIENTO Y AJARDINAMIENTO DE LA PLAZA DEL MESTRE VICENTE IBORRA PUJALTE</td>
+  <td>PLAN +CERCA 2022 BOP: 01/08/2022</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>NUEVO PARQUE MUNICIPAL (SECTOR 4 FINCA TEROL)</td>
+  <td>PLAN +CERCA 2023 BOP: 19/12/2023</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ACONDICIONAMIENTO Y PAVIMENTACIÓN DE LA CALLE DE CASAS DE LOS MAESTROS</td>
+  <td>PLAN +CERCA 2022 BOP: 01/08/2022</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+<tr>
+  <td>ADECUACIÓN DEPÓSITOS Y REDES DE AGUA POTABLE.</td>
+  <td>None</td>
+
+  <td>
+    
+      Finalizada
+    
+  </td>
+
+  <td>
+    
+        <button type="button" onclick="subirProyecto('','')">
+            Adjuntar
+        </button>
+    
+    </td>
+</tr>
+
+</tbody>
+</table>
+
+<button type="submit">Enviar</button>
+</form>
+
+</div>
+
+
+<script>
+function subirProyecto(mun, orden) {
+    const url = "https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec";  // Ya la tienes en tus variables Jinja
+    window.open(`${url}?mun=${mun}&obra=${orden}`, "_blank");
+}
+</script>
+
+</body>
+</html>
