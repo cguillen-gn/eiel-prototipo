@@ -107,6 +107,8 @@ button:hover {
 </div>
 
 <script>
+
+
 async function subirAdjunto(mun, obra) {
   const fileInput = document.createElement("input");
   fileInput.type = "file";
@@ -125,7 +127,7 @@ async function subirAdjunto(mun, obra) {
       formData.append("file" + f.name, f);
     }
 
-    const resp = await fetch("TU_URL_SCRIPT/exec", {
+    const resp = await fetch("https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec", {
       method: "POST",
       body: formData
     });
