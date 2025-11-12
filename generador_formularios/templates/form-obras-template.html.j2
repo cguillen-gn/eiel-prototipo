@@ -91,7 +91,8 @@ button:hover {
 
   <td>
     {% if o.cond in [1,2] %}
-        <button type="button" onclick="subirAdjunto('{{ muni_code }}', '{{ o.orden }}')">Adjuntar</button>
+        <button type="button" onclick="subirAdjunto('{{ municipio }}', '{{ obra.codigo }}')">Adjuntar</button>
+        <div id="adjuntos_{{ obra.codigo }}" style="font-size: 13px; margin-top: 4px;"></div>
     {% else %}
         -
     {% endif %}
@@ -107,35 +108,56 @@ button:hover {
 </div>
 
 <script>
+let adjuntosObras = {};
+
+function renderAdjuntosObra(obra) {
+  const cont = document.getElementById("adjuntos_" + obra);
+  const files = adjuntosObras[obra] || [];
+
+  cont.innerHTML = files
+    .map(f => '<div>📎 ${f.name}</div>')
+    .join("");
+}
+
 async function subirAdjunto(mun, obra) {
   const fileInput = document.createElement("input");
   fileInput.type = "file";
   fileInput.multiple = true;
+  fileInput.accept = "*/*";
 
   fileInput.onchange = async () => {
-    const files = fileInput.files;
+    const files = Array.from(fileInput.files);
     if (!files.length) return;
 
+    if (!adjuntosObras[obra]) adjuntosObras[obra] = [];
+    adjuntosObras[obra].push(...files);
+    renderAdjuntosObra(obra);
+
     const formData = new FormData();
-    formData.append("tipo", "obra");
     formData.append("mun", mun);
     formData.append("obra", obra);
 
-    for (let f of files) formData.append("file"+f.name, f);
-
-    const resp = await fetch("https://script.google.com/macros/s/AKfycbyeAuUOpMdItcuR-pIsEqqLvgX2ygo4U-hOucMqlcoFMcuCSxeRo0u0vA8bhFLkm5e4Iw/exec",{
-      method:"POST",
-      body:formData
+    files.forEach((f, idx) => {
+      formData.append(`file${idx}`, f);
     });
 
-    const data = await resp.json();
-    alert(data.status==="ok" ? "✅ subido" : "❌ error");
+    try {
+      const resp = await fetch("{{ url_drive }}", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await resp.json();
+      if (data.status !== "ok") alert("⚠️ Error al subir archivo");
+    } catch {
+      alert("✅ Archivos enviados, sin respuesta del servidor");
+    }
   };
 
   fileInput.click();
 }
-
 </script>
+
 
 
 </body>

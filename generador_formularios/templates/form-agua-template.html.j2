@@ -64,10 +64,10 @@ let depositos = {{ depositos_json | safe }};
 function pintarTabla(){
   let html = "";
   depositos.forEach((d,i)=>{
-    html += `<tr>
+    html += '<tr>
       <td>${d.nombre}</td>
       <td><input type="date" onchange="cambiarFecha(${i},this.value)" value="${d.limpieza || ''}"></td>
-    </tr>`;
+    </tr>';
   });
   document.getElementById("tablaDepositos").innerHTML = html;
 }
@@ -86,12 +86,12 @@ const fileList = document.getElementById("fileList");
 input.onchange = ()=>{ archivos = Array.from(input.files); renderArchivos(); };
 function eliminarArchivo(i){ archivos.splice(i,1); renderArchivos(); }
 function renderArchivos(){
-  fileList.innerHTML = archivos.map((f,i)=>`
+  fileList.innerHTML = archivos.map((f,i)=>'
     <div class="file-item">
       ${f.name}
       <button style="width:30px;background:#b71c1c" onclick="eliminarArchivo(${i})">X</button>
     </div>
-  `).join("");
+  ').join("");
 }
 
 // ------------------------
@@ -114,9 +114,9 @@ async function subirArchivosADrive() {
   const archivosBase64 = await Promise.all(promises);
   const datos = { municipio: municipio };
   archivosBase64.forEach((a) => {
-    datos[`file${a.index}`] = a.data;
-    datos[`file${a.index}_name`] = a.name;
-    datos[`file${a.index}_type`] = a.type;
+    datos['file${a.index}'] = a.data;
+    datos['file${a.index}_name'] = a.name;
+    datos['file${a.index}_type'] = a.type;
   });
 
   const formBody = Object.keys(datos).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(datos[k])).join('&');
