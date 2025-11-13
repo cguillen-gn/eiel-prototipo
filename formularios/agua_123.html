@@ -63,11 +63,19 @@ let depositos = [{"nombre": "DEPOSITO LA TORRE", "limpieza": "2022"}, {"nombre":
 // Pintar tabla
 function pintarTabla(){
   let html = "";
-  depositos.forEach((d,i)=>{
-    html += '<tr>
-      <td>${d.nombre}</td>
-      <td><input type="date" onchange="cambiarFecha(${i},this.value)" value="${d.limpieza || ''}"></td>
-    </tr>';
+  depositos.forEach((d,i) => {
+    html += `
+      <tr>
+        <td>${d.nombre}</td>
+        <td>
+          <input 
+            type="date" 
+            onchange="cambiarFecha(${i}, this.value)" 
+            value="${d.limpieza || ''}"
+          >
+        </td>
+      </tr>
+    `;
   });
   document.getElementById("tablaDepositos").innerHTML = html;
 }
