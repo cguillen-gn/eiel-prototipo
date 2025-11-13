@@ -718,7 +718,8 @@ function renderAdjuntosObra(obra) {
         <button 
           type="button" 
           onclick="eliminarAdjunto('${obra}', ${i})"
-          style="background:#b71c1c; color:white; border:none; padding:2px 6px; border-radius:4px; cursor:pointer;"
+          style="background:none; color:#b71c1c; border:none; font-size:14px; cursor:pointer;"
+          title="Eliminar archivo"
         >
           ❌
         </button>
@@ -731,6 +732,7 @@ function eliminarAdjunto(obra, index) {
   adjuntosObras[obra].splice(index, 1);
   renderAdjuntosObra(obra);
 }
+
 
 
 async function subirAdjunto(mun, obra) {
@@ -770,8 +772,5 @@ async function subirAdjunto(mun, obra) {
   fileInput.click();
 }
 </script>
-
-
-
 </body>
 </html>
