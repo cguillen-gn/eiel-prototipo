@@ -22,7 +22,7 @@ OUT_DIR = r"C:\Users\cguillen.GEONET\Documents\GitHub\eiel-prototipo\formularios
 MUNICIPIOS_TSV = "municipios.tsv"
 
 # Opcional: URLs que se inyectarán en la plantilla (deja en blanco o pon las tuyas)
-URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwZqswRuGBHfzPV1CwoGVW8QMRZBW5KJ4WVJ68gRVxfmn9N9BO5_VyDo4n25NiSXXwfUw/exec"
+URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwjCVa_hmx9eY5ZaFZoWjM46zehZhLKx0IS5ebBb7G2Nq0DmQgnbYqFkH09GacH4nLq6A/exec"
 URL_GOOGLE_FORMS = "https://docs.google.com/forms/d/e/1FAIpQLSc84PLY4O2wM9ek3v6L14DzZ8jcqDtFeKOK01i38s7ttPt0Ng/formResponse"
 # ---------------- END CONFIG -----------------------------------
 
