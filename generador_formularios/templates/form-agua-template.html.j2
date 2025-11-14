@@ -121,35 +121,64 @@ function renderArchivos() {
 async function subirArchivos() {
   if (!archivos.length) return true;
 
+  console.log("📤 INICIO SUBIDA");
+  console.log("Archivos a subir:", archivos.length);
+  console.log("URL destino:", URL_APPS_SCRIPT);
+
   return new Promise((resolve) => {
     const formData = new FormData();
     formData.append("tipo", "agua");
     formData.append("mun", municipio);
 
-    archivos.forEach((f, idx) => formData.append(`file${idx}`, f));
+    console.log("Parámetros:", { tipo: "agua", mun: municipio });
+
+    archivos.forEach((f, idx) => {
+      console.log(`Adjuntando file${idx}: ${f.name} (${f.size} bytes, tipo: ${f.type})`);
+      formData.append(`file${idx}`, f);
+    });
 
     const xhr = new XMLHttpRequest();
     
     xhr.onload = function() {
+      console.log("📥 RESPUESTA RECIBIDA");
+      console.log("Status HTTP:", xhr.status);
+      console.log("Texto bruto:", xhr.responseText);
+      
       try {
         const data = JSON.parse(xhr.responseText);
+        console.log("✅ JSON parseado:", data);
+        
+        if (data.logs) {
+          console.log("\n========== LOGS DEL SERVIDOR ==========");
+          data.logs.forEach((log, i) => console.log(`${i + 1}. ${log}`));
+          console.log("=======================================\n");
+        }
+        
         resolve(data.status === "ok");
       } catch(e) {
-        console.error("Error parseando respuesta:", e);
+        console.error("❌ Error parseando JSON:", e);
+        console.error("Respuesta que causó error:", xhr.responseText);
         resolve(false);
       }
     };
     
     xhr.onerror = function() {
-      console.error("Error de red");
+      console.error("❌ ERROR DE RED");
+      console.error("Status:", xhr.status);
+      console.error("StatusText:", xhr.statusText);
+      resolve(false);
+    };
+    
+    xhr.ontimeout = function() {
+      console.error("⏱️ TIMEOUT");
       resolve(false);
     };
 
+    console.log("🚀 Enviando petición...");
     xhr.open("POST", URL_APPS_SCRIPT);
     xhr.send(formData);
   });
 }
-
 
 // ------------------------
 // ENVIAR
