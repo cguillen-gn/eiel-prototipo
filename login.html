@@ -26,9 +26,9 @@ document.getElementById("loginBtn").addEventListener("click", function() {
 
   // Usuarios de prueba por código INE
   const usuarios = {
-    "019": "1234", // Aspe
-    "066": "abcd", // Elda
-    "009": "2025"  // Alcoy
+    "019": { pass: "1234", nombre: "Aspe" },
+    "066": { pass: "abcd", nombre: "Elda" },
+    "009": { pass: "2025", nombre: "Alcoy" }
   };
 
   if (usuarios[u] && usuarios[u].pass === p) {
