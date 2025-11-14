@@ -121,22 +121,33 @@ function renderArchivos() {
 async function subirArchivos() {
   if (!archivos.length) return true;
 
-  const formData = new FormData();
-  formData.append("tipo", "agua");
-  formData.append("mun", municipio);
+  return new Promise((resolve) => {
+    const formData = new FormData();
+    formData.append("tipo", "agua");
+    formData.append("mun", municipio);
 
-  archivos.forEach((f, idx) => formData.append(`file${idx}`, f));
+    archivos.forEach((f, idx) => formData.append(`file${idx}`, f));
 
-  try {
-    const resp = await fetch(
-      URL_APPS_SCRIPT,
-      { method: "POST", body: formData }
-    );
-    const data = await resp.json();
-    return data.status === "ok";
-  } catch {
-    return false;
-  }
+    const xhr = new XMLHttpRequest();
+    
+    xhr.onload = function() {
+      try {
+        const data = JSON.parse(xhr.responseText);
+        resolve(data.status === "ok");
+      } catch(e) {
+        console.error("Error parseando respuesta:", e);
+        resolve(false);
+      }
+    };
+    
+    xhr.onerror = function() {
+      console.error("Error de red");
+      resolve(false);
+    };
+
+    xhr.open("POST", URL_APPS_SCRIPT);
+    xhr.send(formData);
+  });
 }
 
 
